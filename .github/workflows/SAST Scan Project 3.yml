@@ -24,7 +24,6 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: python
-          tools: codeql-python-all
 
       - name: Run CodeQL Analysis
         uses: github/codeql-action/analyze@v3
