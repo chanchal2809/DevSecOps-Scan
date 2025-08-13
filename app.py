@@ -15,8 +15,8 @@ def get_user_data(user_id):
     cursor = connection.cursor()
 
     # Vulnerable to SQL Injection
-    query = f"SELECT * FROM users WHERE id = '{user_id}'"
-    cursor.execute(query)
+    query = "SELECT * FROM users WHERE id = ?"
+    cursor.execute(query, (user_id,))
     return cursor.fetchall()
 
 # 2. **Broken Authentication**
